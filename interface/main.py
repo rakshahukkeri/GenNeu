@@ -7,7 +7,7 @@ import operator
 
 
 app = Flask(__name__)
-mariadb_connect = mariadb.connect(user='chooseAUserName', password='chooseAPassword', databse='Login')
+mariadb_connect = mariadb.connect(user='rakshahukkeri', password='saras321', database='Login')
 
 
 @app.route('/')
