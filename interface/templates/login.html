@@ -1,95 +1,57 @@
-<style>
- * {
-box-sizing: border-box;
-}
-*:focus {
-outline: none;
-}
-body {
-font-family: Arial;
-background-color: #E55423;
-padding: 50px;
-}
-.login {
-margin: 20px auto;
-width: 300px;
-}
-.login-screen {
-background-color: #FFF;
-padding: 20px;
-border-radius: 5px
-}
-.app-title {
-text-align: center;
-color: #777;
-}
-.login-form {
-text-align: center;
-}
-.control-group {
-margin-bottom: 10px;
-}
-input {
-text-align: center;
-background-color: #ECF0F1;
-border: 2px solid transparent;
-border-radius: 3px;
-font-size: 16px;
-font-weight: 200;
-padding: 10px 0;
-width: 250px;
-transition: border .5s;
-}
-input:focus {
-border: 2px solid #3498DB;
-box-shadow: none;
-}
-.btn {
-border: 2px solid transparent;
-background: #E55423;
-color: #ffffff;
-font-size: 16px;
-line-height: 25px;
-padding: 10px 0;
-text-decoration: none;
-text-shadow: none;
-border-radius: 3px;
-box-shadow: none;
-transition: 0.25s;
-display: block;
-width: 250px;
-margin: 0 auto;
-}
-.btn:hover {
-background-color: #E55423;
-}
-.login-link {
-font-size: 12px;
-color: #444;
-display: block;
-margin-top: 12px;
-}  
- </style>
- <title>Login</title>
-{% block body %}
-<form action="/lgoin" method="POST">
-<div class="login">
-  <div class="login-screen">
-    <div class="app-title">
-      <h1>Login</h1>
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Login / Sign Up Form</title>
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="./src/main.css">
+</head>
+<body>
+    <div class="container">
+        <form class="form" id="login">
+            <h1 class="form__title">Login</h1>
+            <div class="form__message form__message--error"></div>
+            <div class="form__input-group">
+                <input type="text" class="form__input" autofocus placeholder="Username or email">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="password" class="form__input" autofocus placeholder="Password">
+                <div class="form__input-error-message"></div>
+            </div>
+            <button class="form__button" type="submit">Continue</button>
+            <p class="form__text">
+                <a href="#" class="form__link">Forgot your password?</a>
+            </p>
+            <p class="form__text">
+                <a class="form__link" href="./" id="linkCreateAccount">Don't have an account? Create account</a>
+            </p>
+        </form>
+        <form class="form form--hidden" id="createAccount">
+            <h1 class="form__title">Create Account</h1>
+            <div class="form__message form__message--error"></div>
+            <div class="form__input-group">
+                <input type="text" id="signupUsername" class="form__input" autofocus placeholder="Username">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="text" class="form__input" autofocus placeholder="Email Address">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="password" class="form__input" autofocus placeholder="Password">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="password" class="form__input" autofocus placeholder="Confirm password">
+                <div class="form__input-error-message"></div>
+            </div>
+            <button class="form__button" type="submit">Continue</button>
+            <p class="form__text">
+                <a class="form__link" href="./" id="linkLogin">Already have an account? Sign in</a>
+            </p>
+        </form>
     </div>
-  <div class="login-form">
-    <div class="control-group">
-        <input type="text" class="login-field" value="" placeholder="username" name="username">
-        <label class="login-field-icon fui-user" for="login-name"></label>
-    </div>
-    <div class="control-group">
-        <input type="password" class="login-field" value="" placeholder="password" name="password">
-        <label class="login-field-icon fui-lock" for="login-pass"></label>
-    </div>
-     <input type="submit" value="Log in" class="btn btn-primary btn-large btn-block">
-   </div>
-  </div>
- </div>
-</form>
-{% endblock %}
+    <script src="./src/main.js"></script>
+</body>
+
